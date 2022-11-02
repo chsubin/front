@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test14.html</title>
+  <script>
+    'use strict';
+    let res;
+    let su;
+    function calc() {
+      su =myform.su.value;
+      res = eval(su);
+      myform.result.value=res;
+    }
+  </script>
+</head>
+<body>
+  <h2>사칙연산 계산하기</h2>
+  <form name="myform">
+    <fieldset>
+      <legend>계산기</legend>
+      <p>
+        <label for="su">연산을 입력하세요 :
+        <input type="text" name="su" id="su"/>
+      </p>
+      <p>
+        결과창 : 
+        <input type="number" name="result" id="result" readonly/>
+      </p>
+      <input type="button" value="계산" onclick="calc()"/>
+    </fieldset>
+    </form>
+</body>
+</html>

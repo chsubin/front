@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>회원가입</title>
+  </head>
+  <body>
+    <h1 align="center"><font color="navy">회원가입</font></h1><hr width="500px" size="5px" color="navy" align="center"/><br/><br/><br/>
+    <form name="apply" method="post" action="#">
+      <table  align="center" cellpadding="10px">
+        <tr>
+          <td>프로필 사진</td>
+          <td><input type="file" name="file"></td>
+        </tr>
+        <tr>
+          <td><label for="id">아이디</label></td>
+          <td><input type="text" name="id" id="id" value="영문소문자+숫자"/></td>
+        </tr>
+        <tr>
+          <td><label for="pwd">비밀번호</label></td>
+          <td><input type="password" name="pwd" id="pwd"/></td>
+        </tr>
+          <tr>
+          <td><label for="pwd">비밀번호재확인</label></td>
+          <td><input type="pwd" name="pwd" id="pwd"/></td>
+        </tr>
+          <tr>
+            <td>국적</td>
+            <td>
+              <input type="radio" name="contry" id="contry1" value="local">내국인
+              <input type="radio" name="contry" id="contry2" value="forginer">외국인
+            </td>
+          </tr>
+          <tr>
+          <td><label for="name">이름</label></td>
+          <td><input type="name" name="name" id="name"/></td>
+        </tr>
+          <tr>
+          <td>생년월일</td>
+          <td><input type="date" name="birthday" id="birthday"/><td/>
+        </tr>
+        <tr>
+          <td valign="top">성별</td>
+          <td>
+            <select name="gender">
+              <option>성별</option>
+              <option>남자</option>
+              <option>여자</option>
+              <option>선택안함</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mail">본인 확인 이메일</label></td>
+          <td>
+            <input type="mail" name="mail" id="mail"/>
+          </td>
+        </tr>
+        <tr>
+          <td>자기소개</td>
+          <td><textarea rows="4" cols="30" name="content" id="content" placeholder="자기소개"></textarea></td>
+        </tr>
+          <tr>
+          <td>취미</td>
+          <td>
+            <input type="checkbox" name="hobby" id="hobby1" value="등산"/>등산
+            <input type="checkbox" name="hobby" id="hobby2" value="독서"/>독서
+            <input type="checkbox" name="hobby" id="hobby3" value="영화감상"/>영화감상
+            <input type="checkbox" name="hobby" id="hobby4" value="사진"/>사진
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align ="right">
+          <input type="reset" value="다시입력"/>
+          <input type="button" value="회원가입"/>
+          </td>
+        </tr>
+
+      </table>
+    </form>
+    <br/>
+    <hr width="500px" size="5px" align="center" color="navy"/>
+  </body>
+</html>
+

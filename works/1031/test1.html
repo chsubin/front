@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html</title>
+  <style>
+    .box {
+      margin: 10px;
+    }
+    .lm5 {
+      margin-left:15px;
+    }
+    #box1 {
+      background-color: green;
+      
+    }
+    #box2 {
+      background-color: orange;
+      width: 300px;
+      
+    }
+    .aa1 {
+      background-color: pink;
+    }
+    .bb1 {
+      background-color: blue;
+      width: 100%;
+      height: 20px;
+    }
+    #box3 {
+      width: 300px;
+      height: 200px;
+      border: 5px solid red;
+      margin: 20px 0px;
+      padding: 25px;
+      text-align: center;
+    }
+    #contBox3{
+      width: 700px;
+      background-color: aqua;
+      margin: 0 auto;/*지정된 영역을 중앙정렬하기 양쪽을 auto로 정렬한다.*/
+    }
+    #box4 {
+      width:400px;
+      height: 92px;
+      background-color: yellow;
+      text-align: center;
+      padding-top: 58px;
+    }
+    #box5 {
+      border: 5px dotted green;
+    }
+    #box6 {border: 5px double green;}
+    #box7 {
+      height: 200px;
+      border: 5px double green;
+      background-color: khaki;
+      border-radius: 30px 30px 0px 0px; /*왼쪽 모서리부터 시계방향으로*/
+      text-align: center;
+      font-size: 2em; /* 1em = 16px */
+      padding: 100px 0 0 0; /*수직 가운데 정렬 가능*/
+      font-family: '한아름','맑은고딕',"휴먼매직체",'궁서'; /*글씨체*/
+    }
+    #box8 {font-variant: small-caps; /*대문자로 조그마하게 보여주기*/}
+    #box9 {text-transform: lowercase ;} /*소문자로*/
+    #box10 {text-transform: uppercase;} /*대문자로*/
+    #box11 {text-decoration: line-through;} /*중간 선 긋기*/
+    #box12 {
+      font-size:25px;
+      font-weight : bolder; /*폰트 진하게 하기*/
+      text-shadow: -5px 3px 3px gray;/*x축,y축,흐림의 정도(그림자)*/
+    }
+</style>
+</head>
+<body>
+  <h2>Box Layout</h2>
+  <div id="box1" class="box lm5">1.안녕하세요.</div>
+  <div id="box2" class="box">2.안녕하세요.</div>
+  <div id="contBox3">
+    <div id="box3" class="box lm5">3.안녕하세요.</div>
+  </div>
+  <div id="box4" class="box">4.안녕하세요.</div>
+  <div id="box5" class="box lm5">5.안녕하세요.</div>
+  <div id="box6" class="box">6.안녕하세요.</div>
+  <div id="box7" class="box">7.안녕하세요.</div>
+  <div id="box8" class="box">8.안녕하세요.(Welcome to Korea!)</div>
+  <div id="box9" class="box">9.안녕하세요.(Welcome to Korea!)</div>
+  <div id="box10" class="box">10.안녕하세요.(Welcome to Korea!)</div>
+  <div id="box11" class="box">11.안녕하세요.(Welcome to Korea!)</div>
+  <div id="box12" class="box">12.안녕하세요.(Welcome to Korea!)</div>
+  <div>
+    코드로 <span class="aa1">배우는</span> 스프링 웹 프로젝트 개정판
+  </div>
+  <div class="bb1"></div>
+</body>
+</html>

@@ -10,7 +10,12 @@
       margin:0px;
       padding:0px;
     }
-    body {
+    #top {
+      width: 1000px;
+      /*border: 1px solid black;*/
+      margin: 0 auto;
+    }
+    #bottom {
       width: 1000px;
       border: 1px solid black;
       margin: 0 auto;
@@ -26,7 +31,7 @@
     }
     #search {
       width: 100%;
-      height: 15px;
+      height: 30px;
       border: 1px solid black;
     }
     #header2 {
@@ -48,72 +53,248 @@
     }
     #baechu {
       height: 60px;
-      width: 100%;
+      width: 600px;
       clear: both;
       text-align: center;
       padding: 20px;
       border: 1px solid black;
       margin: 10px;
     }
-    #news {
+    .newscont,.tvcont,.cafecont {
       width:700px;
       margin: 0 auto;
       display: grid;
       grid-gap:1em;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       margin: 10px 10px;
     }
-    #news1,#news2,#news3,#news4,#news5,#news6,#news7,#news8,#news9 {
-      width: 200px;
+    .news {
+      width: 150px;
       height: 100px;
-      /* border: 1px solid black; */
       justify-items: center;
-      background-color: gray;
+      background-color: #ddd;
+      margin: 0 auto;
     }
-    #news:nth-child(3) {
+    .news:nth-child(4) {
       grid-row: 1/3;
+      grid-column: 3/5;
+      align-self: center;
+      grid-column: 3,4;
+      width:330px;
+      height : 220px;
+    }
+    #newstext {
+      width: 100%;
+      height: 100%;
+    }
+    .login {
+      float: right;
+      width: 270px;
+      height: 120px;
+      margin: 10px 0px 10px 5px;
+      background-color: #eee;
+    }
+    .artt {
+      float: right;
+      width: 270px;
+      height: 130px;
+      margin: 0px 0px 10px 5px;
+      background-color: #ccc;
+    }
+    .shopping, .shopping2 {
+      float: right;
+      width: 270px;
+      height: 500px;
+      margin: 0px 0px 10px 5px;
+      border : 1px solid darkgray;
+    }
+    .shoppingcont, .shoppingcont2 {
+      clear: both;
+      width: 268px;
+      border : 1px solid darkgray;
+      background-color: #eee;
+    }
+    #shoppingbtn td {
+      border : 1px solid darkgray;
+    }
+    #shoppingbtn {
+      width: 250px;
+      height: 20px;
+      margin: 440px auto;
+      text-align: center;
+      border-collapse: collapse;
+    }
+    .login span {
+      font-size: 10px;
+    }
+    .login span, .login div {
+      margin : 10px 15px;
+    }
+    .login div {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border: 1px solid black;
+    }
+    .tv,.cafe {
+      width: 150px;
+      height: 80px;
+      background-color: #ccc;
+    }
+    #newstag > .left {
+      float: left;
+    }
+    #newstag > .right {
+      float: right;
+    }
+    .brunchcafe , .kakaotv , #newstag{
+      margin:10px 0px;
+      padding: 10px 0px;
+    }
+    #newstag {
+      height: 16px;
+      width:100%;
+      border: 1px solid gray;
+      background-color: #eee;
+    }
+    .homecook {
+      margin: 10px 0px;
+    }
+    .daum {
+      color: blue ;
+      font-size: 30px;
+    }
+    #kakao {
+      background-color: yellow;
     }
   </style>
 </head>
 <body>
-  <header id="header">
-    <div>다음을 시작페이지로</div>
-    <div id="headicon">
-      <div class="headitem">Daum</div>
-      <div class="headitem">
-        <div>
-          <div id="search"></div>
-          10월 수출증가율 르세라핌빌보드 경찰청장 사과 RM 솔로준비 이영애 출연검토
+  <div id="top">
+    <header id="header">
+      <div style="font-size: 13px;">다음을 시작페이지로</div>
+      <div id="headicon">
+        <div class="daum"><b>Daum</b></div>
+        <div class="headitem">
+          <div style="font-size:13px">
+            <div id="search"></div>
+            10월 수출증가율 르세라핌빌보드 경찰청장 사과 RM 솔로준비 이영애 출연검토
+          </div>
+        </div>
+        <div class="headitem">이태원사고 사망자를<br/> 추모합니다.</div>
+      </div>
+    </header>
+    <header id="header2">
+      <div class="header2-icon1">카페 메일 뉴스 지도 증권 쇼핑 카카오TV 웹툰 캘린더 브런치 사전 게임 같이가치 더보기</div>
+      <div class="header2-icon2">11.01.(화) 전라남도 19도</div>
+    </header>
+  </div>
+  <hr style="clear:both"/>
+  <!-- 왼쪽 -->
+  <div id="bottom">
+    <section id="section">
+      <div id="baechu">
+        1등 해남절임배추 20kg 37,900원 특가
+      </div>
+      <div>
+        <b>뉴스 연예 스포츠 영화 자동차 부동산</b>
+        <div class="newscont">
+          <div class="news">사진1</div>
+          <div class="news">사진2</div>
+          <div class="news">사진3</div>
+          <div class="news">뉴스
+            <table id="newstext">
+              <tr>
+                <td>이해받고 사랑받고 싶었던 '같은 속옷..' 두 여자</td>
+              </tr>
+              <tr>
+                <td>연기로 승화한 세대 간의 공감[내가 본 '이성민']</td>
+              </tr>
+              <tr>
+                <td>웃음기 뺀 라미란-유해진 맞붙는다</td>
+              </tr>
+              <tr>
+                <td>'플:600미터'대역 없이  소화...아찔 고공 서바이벌</td>
+              </tr>
+              <tr>
+                <td>'자백' vs'리멤버',원작 기반으로 재탄생한 k무비의 매력</td>
+              </tr>
+            </table>
+          </div>
+          <div class="news">사진5</div>
+          <div class="news">사진6</div>
+          <div class="news">사진7</div>
+          <div class="news">사진8</div>
+          <div class="news">사진9</div>
+        </div>
+        <div id="newstag">
+          <span class="left">연예홈>  많이 본 뉴스  TV영상  포토  투표  연재</span>
+          <span class="right">시청률 요일별드라마 방금그곡</span>
         </div>
       </div>
-      <div class="headitem">이태원사고 사망자를 추모합니다.</div>
-    </div>
-  </header>
-  <header id="header2">
-    <div class="header2-icon1">카페 메일 뉴스 지도 증권 쇼핑 카카오TV 웹툰 캘린더 브런치 사전 게임 같이가치 더보기</div>
-    <div class="header2-icon2">11.01.(화) 전라남도 19도</div>
-  </header>
-  <hr style="clear:both"/>
-  <section id="section">
-    <div id="baechu">
-      1등 해남절임배추 20kg 37,900원 특가
-    </div>
-    <div>
-      뉴스 연예 스포츠 영화 자동차 부동산
-      <div id="news">
-        <div id="news1"></div>
-        <div id="news2"></div>
-        <div id="news3"></div>
-        <div id="news4"></div>
-        <div id="news5"></div>
-        <div id="news6"></div>
-        <div id="news7"></div>
-        <div id="news8"></div>
-        <div id="news9"></div>
+      <hr style ="clear:both;"/>
+      <div class="kakaotv" style ="clear:both;">
+        <div><b>카카오TV</b>  오리지널콘텐츠 TV주요장면 많이본TV</div>
+        <div class="tvcont">
+          <div class="tv">동영상1</div>
+          <div class="tv">동영상2</div>
+          <div class="tv">동영상3</div>
+          <div class="tv">동영상4</div>
+        </div>
       </div>
-    </div>
-  </section>
-  <article id="article">
-  </article>
+      <hr/>
+      <div class="brunchcafe">
+        <div><b>카페 브런치 티스토리 카카오스토리</b></div>
+        <div class="cafecont">
+          <div class="cafe">동영상1</div>
+          <div class="cafe">동영상2</div>
+          <div class="cafe">동영상3</div>
+          <div class="cafe">동영상4</div>
+        </div>
+      </div>
+      <hr/>
+      <div class="homecook">
+        <div><b>홈&쿠킹 머니 동물 스타일 M+ 여행맛집 직장IN 뮤직 웹툰 게임 같이가치</b></div>
+
+      </div>
+    </section>
+    <!-- 오른쪽 -->
+    <article id="article">
+      <div class="login">
+        <span>이제 카카오 계정으로 Daum을 이용해주세요</span>
+        <div id="kakao">카카오계정으로 로그인</div>
+        <span style="float:left;"><b>Daum</b> 아이디 통합하기</span>
+        <span style="float:right">회원가입</span>
+      </div>
+      <div class="artt">
+        광고~~!!!
+      </div>
+      <div class="shopping2">
+        <div class="shoppingcont2">
+          쇼핑 >  G마켓 옥션
+        </div>
+        <div class="shoppingcont2-1">
+          쿠팡 하프클럽 11번가 GS샵 패션플러스 리린 일상공감 아이스탁몰 뮬리안 모놀로그 지젤 마틸라 저스트원 헬렌 리빙픽 시크라인 STL
+        </div>
+      </div>
+      <div class="shopping">
+        <div class="shoppingcont">
+          쇼핑몰할인특가
+        </div>
+        <table id="shoppingbtn">
+          <tr>
+            <td>
+              쇼핑홈
+            </td>
+            <td>
+              핫딜
+            </td>
+            <td>
+              알리익스프레스
+            </td>
+          </tr>
+        </table>
+      </div>
+    </article>
+  </div>
 </body>
 </html>

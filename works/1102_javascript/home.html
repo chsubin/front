@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+  <script>
+    'use strict';
+    let sik=""; /*NAN이 나오지 않기위해 값을 주었따.*/
+    let sw="0"; /*연산식이 수행되면 1로 바뀐다. 유효성 검사를 하기 위해*/
+    function input(su) {
+      if (sik==""&(su=="+"|su=="-"|su=="*"|su=="+"|su=="/")) return; /*문장 처음에 연산식이 들어오면 출력하지 않는다.*/
+      else if ((sik[sik.length-1]=="+"|sik[sik.length-1]=="-"|sik[sik.length-1]=="*"|sik[sik.length-1]=="+"|sik[sik.length-1]=="/")&(su=="+"|su=="-"|su=="*"|su=="+"|su=="/")) return;
+      /*연산관련 유효성 검사 부분*/
+      if (sw==1) {
+        if(su!="+"&su!="-"&su!="*"&su!="+"&su!="/"){ /*연산을하고난뒤에 연산식이 들어오면 그대로 계산 그렇지않으면 초기화하는 메소드*/
+        set();
+        sw=0;
+        }
+        else {sw=0;}
+      }
+      sik +=su;
+      demo.innerText = sik;
+    }
+    function enter() {
+      if (sik=="") return;
+      sik=eval(sik)+"";
+      demo.innerText = sik;
+      sw=1
+    }
+    function set() {
+      sik="";
+      demo.innerText = sik;
+      console.log(sik);
+    }
+    function cancle() {
+      sik=sik.substring(0,sik.length-1)
+      demo.innerText = sik;
+      console.log(sik);
+    }
+
+
+  </script>
+  <style>
+    * {
+      margin: 0;
+      padding : 0;
+    }
+    #main {
+      width: 200px;
+      height : 280px;
+      border: 1px solid gray;
+      margin : 25px auto;
+      padding: 5px;
+      background-color: gray;
+    }
+    #btngroup {
+      display:flex;
+      width: 140x;
+      height: 200px; 
+      flex-flow: row wrap;
+      justify-content: space-between; /*여백 같게 만들기*/
+    }
+    #btngroup:nth-child(10) {
+      margin-left: 65px;
+    }
+    #btngroup button[type="button"] {
+      width: 38px;
+      height:30px;
+      border : 1px solid black;
+      margin: 01px;
+    }
+    #methodgroup button[type="button"] {
+      width: 36px;
+      height:37px;
+      border : 1px solid black;
+      margin: 1px;
+    }
+    #demo {
+      width : 170px;
+      height: 30px;
+      border: 1px solid black;
+      margin: 10px auto;
+      padding: 5px;
+      background-color: antiquewhite;
+    }
+  </style>
+</head>
+<body>
+  <form name="myform" method="get" action="#">
+  <div id="main">
+    <div id="demo"></div>
+    <div style ="width : 140px; float:left">
+      <div id ="btngroup">
+        <button style="width:66px; height: 30px" type="button" name="reset" id="reset" onclick="set()" value="AC">AC</button>
+        <button style="width:66px; height: 30px" type="button" name="reset" id="reset" onclick="cancle()" value="C">C</button>
+        <button type="button" name="su" id="su1" value="1" onclick="input('1')">1</button>
+        <button type="button" name="su" id="su2" value="2" onclick="input('2')">2</button>
+        <button type="button" name="su" id="su3" value="3" onclick="input('3')">3</button>
+        <button type="button" name="su" id="su4" value="4" onclick="input('4')">4</button>
+        <button type="button" name="su" id="su5" value="5" onclick="input('5')">5</button>
+        <button type="button" name="su" id="su6" value="6" onclick="input('6')">6</button>
+        <button type="button" name="su" id="su7" value="7" onclick="input('7')">7</button>
+        <button type="button" name="su" id="su8" value="8" onclick="input('8')">8</button>
+        <button type="button" name="su" id="su9" value="9" onclick="input('9')">9</button>
+        <button style="width:80px; height: 30px" type="button" name="su" id="su0"  value="0"  onclick="input('0')">0</button>
+        <button type="button" type="button" name="su" id="sudot" value="."  onclick="input('.')">.</button>
+      </div>
+    </div>
+    <div style ="width : 40px; float:right; margin-right:10px">
+      <div id ="methodgroup">
+        <button type="button" name="su" id="suplus"  onclick="input('+')" value="+">+</button>
+        <button type="button"  name="su" id="suminus"  onclick="input('-')"  value="-">-</button>
+        <button type="button" name="su" id="sumul"  onclick="input('*')" value="*">*</button>
+        <button type="button" name="su" id="sudiv"  onclick="input('/')" value="/">/</button>
+        <button type="button" name="su" id="suenter"  onclick="enter()" value="=">=</button>
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+</html>

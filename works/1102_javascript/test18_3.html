@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test18_2.html</title>
+  <title>test18.html</title>
   <script>
     'use strict';
     function fCheck() {
@@ -15,8 +15,8 @@
       // else if (document.getElementById("gender2").value=='여') {
       //   gender ='여';
       // }
-      if (document.getElementsById("gender2"))gender="남";
-      if (document.getElementsById("gender1"))gender="여";
+      if (document.getElementsByName("gender")[0].checked)gender="남";
+      if (document.getElementsByName("gender")[1].checked)gender="여";
       if (gender=='남') {
         demo.innerHTML = "<font color='blue'><b>"+gender+"</b></font>";
       }

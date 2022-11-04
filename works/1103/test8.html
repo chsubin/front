@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    'use strict';
+    const regMid = /[^a-zA-Z0-9_]/gm;     // 아이디는 영문소문자,대문자, 숫자, 밑줄만 사용사능
+    const regName = /^[a-zA-Z가-힣]{2,20}$/gm;    // 성명은 한글/영문만 가능하도록 길이는 2~20자까지
+    const regTel = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/gm;       //전화번호 형식에 맞게 체크(지역번호-국번-전화번호)
+    const regEmail =/^[a-z0-9_]+@[a-z]+\.[a-z]+$/gm;      //이메일 형식에 맞도록 체크(a@b.c)
+
+    function fCheck() {
+      let mid = document.getElementById("mid").value.trim();
+      let name = document.getElementById("name").value.trim();
+      let phone = document.getElementById("phone").value.trim();
+      let email = document.getElementById("mail").value.trim();
+      if (mid=="") {
+        alert("아이디를 입력해주세요");
+        return;
+      }
+      else if(mid.match(regMid)){
+        alert("아이디는 영문소문자, 대문자, 숫자, 밑줄만 사용해주세요.");
+        return;
+      }
+      if(document.getElementById("pwd").value.trim()=="") {
+        alert("비밀번호를 입력해주세요.");
+        return;
+      }
+      if (name=="") {
+        alert("성명을 입력해주세요");
+        return;
+      }
+      else if(!name.match(regName)){
+        alert("성명은 한글/영문만 2~20자로 입력해주세요.");
+        return;
+      }
+      if (phone=="") {
+        alert("연락처를 입력해주세요");
+        return;
+      }
+      else if(!phone.match(regTel)){
+        alert("연락처는 형식에 맞게 입력해주세요.");
+        return;
+      }
+      if (email=="") {
+        alert("이메일주소를 입력해주세요");
+        return;
+      }
+      else if(!email.match(regEmail)){
+        alert("이메일주소는 형식에 맞게 입력해주세요.");
+        return;
+      }
+
+      alert("완료되었습니다.");
+    }
+
+  </script>
+  <style>
+    table {
+      width:400px;
+    }
+    .content {
+      background-color: rgb(235, 235, 235);
+    }
+    .step1 {
+      text-align: center;
+      background-color: dimgray;
+      height: 50px;
+    }
+    .cont {
+      text-align: right;
+      background-color: rgb(235, 235, 235);
+      height: 35px;
+    }
+  </style>
+</head>
+<body>
+  <h1>회원가입</h1>
+  <hr/>
+  <form name="myform" method="post" action="#">
+    <table align="center">
+      <tr class="step1">
+        <td colspan="2">
+          <b>step1:아이디/비밀번호 입력</b>
+        </td>
+      </tr>
+      <tr>
+        <td label for="mid" class="cont"><font color="red"><b>*</b></font> 아이디</td>
+        <td class="content"><input type="text" name="mid" id="mid"></td>
+      </tr>
+      <tr>
+        <td lable for ="pwd" class="cont"><font color="red"><b>*</b></font> 비밀번호</td>
+        <td class="content"><input type="password" name="pwd" id="pwd"></td>
+      </tr>
+      <tr class="step1">
+        <td colspan="2">
+          <b>step2:개인정보</b>
+        </td>
+      </tr>
+      <tr>
+        <td lable for ="name" class="cont"><font color="red"><b>*</b></font> 성명</td>
+        <td class="content"><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <td class="cont"><font color="red"><b>*</b></font> 성별</td>
+        <td class="content">
+          <input type="radio" name="gender" id="gender1" value="male" checked/>남
+          <input type="radio" name="gender" id="gender2" value="female"/>여
+        </td>
+      </tr>
+      <tr>
+        <td label for="phone" class="cont"><font color="red"><b>*</b></font> 연락처</td>
+        <td class="content">
+          <input type="text" name="phone" id="phone">
+        </td>
+      </tr>
+      <tr>
+        <td class="cont"><font color="red"><b>*</b></font> E-mail</td>
+        <td class="content">
+          <input type="email" name="mail" id="mail">
+        </td>
+      </tr>
+      <tr>
+        <td class="cont">혈액형</td>
+        <td class="content">
+          <select name="bloodtype" id="bloodtype">
+            <option>A형</option>
+            <option>B형</option>
+            <option>O형</option>
+            <option>AB형</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="cont">생일</td>
+        <td class="content"><input type="date"></td>
+      </tr>
+      <tr class="step1">
+        <td colspan="2">
+          <b>step3:선호도</b>
+        </td>
+      </tr>
+      <tr>
+        <td class="cont">취미</td>
+        <td class="content">
+          <input type="checkbox" name="prefer" id="prefer1" value="prefer1"/>게임
+          <input type="checkbox" name="prefer" id="prefer2" value="prefer2"/>운동
+          <input type="checkbox" name="prefer" id="prefer3" value="prefer3"/>독서
+        </td>
+      </tr>
+      <tr>
+        <td class="cont">좋아하는색깔</td>
+        <td class="content">
+          <input type="color" name="color" id="color"/> 
+        </td>
+      </tr>
+      <tr class="step1">
+        <td colspan="2">
+          <b>step3:적고싶은말</b>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea name="board" cols="53" rows="6" style="resize:none"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td class="content" colspan="2" align="center">
+          <input type="button" value="제출" onclick="fCheck()"/>
+          <input type="reset" value="취소"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>날짜함수연습1</title>
+  <script src="test9.js"></script>
+</head>
+<body>
+  <h2>날짜함수 연습</h2>
+  <form name="myform">
+    <div>
+      <span name="year">
+        <select name="year" id="year">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+        </select>년
+        <select name="month" id="month">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>월
+      </span>
+      <p>
+        <input type="button" value="표준날짜" onclick="fCheck1()"/>
+        <input type="button" value="편집날짜" onclick="fCheck2()"/>
+        <input type="button" value="쉬운날짜" onclick="fCheck3()"/>
+        <input type="button" value="시간출력" onclick="fCheck4()"/>
+        <input type="button" value="해당월마지막일자" onclick="fCheck5()"/>
+        <input type="button" value="해당월마지막일자(yyyy-mm-dd)" onclick="fCheck6()"/>
+        <!-- <input type="button" value="해당월(simple)마지막일자" onclick="fCheck6()"/> -->
+        <input type="button" value="오늘날짜(yyyy-mm-dd)" onclick="fCheck7()"/>
+      </p>
+    </div>
+  </form>
+  <div id="demo"></div>
+</body>
+</html>

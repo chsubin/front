@@ -15,6 +15,7 @@
     let timeCheck;
 
     function numTime(sel) {
+      clearTimeout(timeCheck);
       if(sel =='plus'){
       num++;
       demo.innerHTML = "<b>"+ num + "</b>";

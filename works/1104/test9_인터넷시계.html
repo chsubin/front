@@ -23,6 +23,7 @@
     function clockStart() {
       clock();
       statusTime=setInterval(clock,1000);
+      demo.innerHTML = "<div class='spinner-grow text-muted'></div>";
     }
     function clockStop() {
       clearInterval(statusTime);
